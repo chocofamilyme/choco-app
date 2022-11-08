@@ -5,5 +5,6 @@ window.RahmetWebApp = {
     onNativePayViewClosed: () => {},
     onGeoPermissionStatusDefined: () => {},
     didBecomeActive: () => {},
-    onBackPressed: () => {}
+    onBackPressed: () => {},
+    didScanQrText: () => {}
 };
