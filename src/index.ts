@@ -8,3 +8,5 @@ window.RahmetWebApp = {
     onBackPressed: () => {},
     didScanQrText: () => {}
 };
+
+export * from './methods';

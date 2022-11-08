@@ -1,3 +1,3 @@
-export const backToRahmetApp = () => {
+export const backToApplication = () => {
     RahmetApp.backToRahmetApp();
 };
