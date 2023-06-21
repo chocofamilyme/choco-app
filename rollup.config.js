@@ -1,7 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 
@@ -10,7 +10,7 @@ const input = ['src/index.ts'];
 export default {
     input,
     plugins: [
-        typescript(),
+        typescript({ tsconfig: './tsconfig.json' }),
         nodeResolve({ browser: true }),
         commonjs(),
         babel({
