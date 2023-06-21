@@ -7,6 +7,8 @@ export interface IRahmetWebApp {
     onNativePayViewClosed: () => unknown;
     onGeoPermissionStatusDefined: (status: GeoStatus) => GeoStatus | void;
     didBecomeActive: Function;
-    onBackPressed: () => unknown;
+    onBackPressed: () => boolean;
     didScanQrText: (text: string) => string | void;
+    didGetReferralCode: (code: string) => unknown;
+    onKeyboardClosed: Function;
 }

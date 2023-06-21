@@ -6,7 +6,9 @@ window.RahmetWebApp = {
     onGeoPermissionStatusDefined: () => {},
     didBecomeActive: () => {},
     onBackPressed: () => {},
-    didScanQrText: () => {}
+    didScanQrText: () => {},
+    didGetReferralCode: () => {},
+    onKeyboardClosed: () => {}
 };
 
 export * from './methods';

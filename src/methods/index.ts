@@ -1,3 +1,9 @@
+export * from './share';
+export * from './haptic';
+export * from './get-refferal-code';
+export * from './navigation-to-back';
+export * from './clear-cache';
+export * from './on-keyboard-closed';
 export { authorize } from './authorize';
 export { backToApplication } from './back-to-app';
 export { applicationBecomeActive } from './become-active';
