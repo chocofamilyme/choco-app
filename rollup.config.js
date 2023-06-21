@@ -3,7 +3,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
-import pkg from './package.json';
 
 const input = ['src/index.ts'];
 
@@ -20,7 +19,7 @@ export default {
         terser()
     ],
     output: {
-        file: `dist/${pkg.name}.min.js`,
+        file: `dist/index.js`,
         format: 'umd',
         name: 'rahmetAuth',
         esModule: false,
