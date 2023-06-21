@@ -96,7 +96,7 @@ hapticSelection();
 
 ### `isLocationEnabled`
 
-Type: `() => void`<br>
+Type: `() => boolean`<br>
 
 Доступна ли геопозиция при использовании приложения.
 
