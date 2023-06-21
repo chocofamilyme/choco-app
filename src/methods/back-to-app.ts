@@ -1,3 +1,3 @@
 export const backToApplication = () => {
-    RahmetApp.backToRahmetApp();
+    window.RahmetApp.backToRahmetApp();
 };

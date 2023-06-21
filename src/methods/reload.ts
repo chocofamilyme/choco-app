@@ -1,5 +1,5 @@
 export const reload = () => {
-    if (RahmetApp.reloadPage) {
-        RahmetApp.reloadPage();
+    if (window.RahmetApp.reloadPage) {
+        window.RahmetApp.reloadPage();
     }
 };

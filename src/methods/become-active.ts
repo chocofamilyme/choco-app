@@ -1,3 +1,3 @@
 export const applicationBecomeActive = (callback: Function) => {
-    RahmetWebApp.didBecomeActive = callback;
+    window.RahmetWebApp.didBecomeActive = callback;
 };

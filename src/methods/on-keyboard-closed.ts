@@ -1,3 +1,3 @@
 export const onKeyboardClosed = (callback: Function) => {
-    RahmetWebApp.onKeyboardClosed = callback;
+    window.RahmetWebApp.onKeyboardClosed = callback;
 };

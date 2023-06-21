@@ -3,7 +3,7 @@ import { GeoStatus } from '../ts/enum/geo-status.enum';
 
 export const requestGeoPermissionStatus = (): Promise<GeoStatus> => {
     return connect((resolve: (status: GeoStatus) => GeoStatus) => {
-        RahmetApp.requestGeoPermissionStatus();
-        RahmetWebApp.onGeoPermissionStatusDefined = (status: GeoStatus) => resolve(status);
+        window.RahmetApp.requestGeoPermissionStatus();
+        window.RahmetWebApp.onGeoPermissionStatusDefined = (status: GeoStatus) => resolve(status);
     });
 };

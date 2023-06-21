@@ -4,8 +4,8 @@ type TPaymentStatus = 'success' | 'closed';
 
 export const pay = (deeplink: string): Promise<TPaymentStatus> => {
     return connect((resolve: (status: TPaymentStatus) => TPaymentStatus) => {
-        RahmetApp.pay(deeplink);
-        RahmetWebApp.onPaySuccess = () => resolve('success');
-        RahmetWebApp.onNativePayViewClosed = () => resolve('closed');
+        window.RahmetApp.pay(deeplink);
+        window.RahmetWebApp.onPaySuccess = () => resolve('success');
+        window.RahmetWebApp.onNativePayViewClosed = () => resolve('closed');
     });
 };
