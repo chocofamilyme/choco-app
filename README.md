@@ -46,6 +46,8 @@ import { shareText } from 'choco-app';
 shareText('Hello World!');
 ```
 
+## Остальное
+
 ### `clearCache`
 
 Type: `() => void`<br>
@@ -128,4 +130,96 @@ Type: `() => void`<br>
 import { reload } from 'choco-app';
 
 reload();
+```
+
+### `getRefferalCode`
+
+Type: `() => Promise<IRefferalCode>`<br>
+
+Получение реферального кода.
+
+```typescript
+import { getRefferalCode } from 'choco-app';
+
+getRefferalCode().then(code => console.log(`Реферальный код: ${code}`));
+```
+
+### `openQR`
+
+Type: `() => Promise<string>`<br>
+
+Нативное считывание QR-кода.
+
+```typescript
+import { openQR } from 'choco-app';
+
+openQR().then(text => console.log(`QR-код: ${text}`));
+```
+
+### `pay`
+
+Type: `(deeplink: string) => Promise<'success' | 'closed'>`<br>
+
+Вызов оплаты через deeplink.
+
+```typescript
+import { pay } from 'choco-app';
+
+pay().then(status => {
+    if (status === 'success') {
+        console.log('Оплата прошла успешно')
+    } else {
+        console.log('Модальное окно оплаты закрыли')
+    }
+}));
+```
+
+### `requestGeoPermissionStatus`
+
+Type: `() => Promise<GeoStatus>`<br>
+
+Получение статуса геопозиции.
+
+```typescript
+import { requestGeoPermissionStatus } from 'choco-app';
+
+requestGeoPermissionStatus().then(status => {
+    if (status === 'granted') {
+        // Получить гео
+    }
+}));
+```
+
+### `authorize`
+
+Type: `(clientId: string, type: 'code' | 'trackId') => Promise<string | undefined>`<br>
+
+Авторизация пользователя по clientId.
+Если пользователь не авторизован в нативном приложении, откроется окно авторизации с вводом номера телефона и кода.
+В другом случае, метод сразу вернет ответ.
+
+> :warning: **Вызов метода по type='code'**: вернет ошибку ошибку, если авторизация по code отсутствует в нативном приложении. Необходимо сделать обработку на ошибку.
+
+```typescript
+import { authorize } from 'choco-app';
+
+// Авторизация по trackId
+authorize('11111111', 'trackId').then(trackId => {
+    if (trackId) {
+        // Сделать запрос на авторизацию
+    }
+}));
+
+// Авторизация по code
+authorize('11111111', 'code')
+    .then(code => {
+        if (code) {
+            // Сделать запрос на авторизацию
+        }
+    })
+    .catch(error => {
+        if (error.message === 'NOT_SUPPORTED') {
+            // Показать ошибку или вызвать authorize с типом trackId
+        }
+    })
 ```

@@ -2,6 +2,7 @@ import { GeoStatus } from '../enum/geo-status.enum';
 
 export interface IRahmetWebApp {
     onAuthSuccess: (trackId: string) => unknown;
+    onAuthSuccessV2: (code: string, state: any) => unknown;
     onAuthDismissed: () => unknown;
     onPaySuccess: () => unknown;
     onNativePayViewClosed: () => unknown;

@@ -1,5 +1,6 @@
 window.RahmetWebApp = {
     onAuthSuccess: () => {},
+    onAuthSuccessV2: () => {},
     onAuthDismissed: () => {},
     onPaySuccess: () => {},
     onNativePayViewClosed: () => {},
