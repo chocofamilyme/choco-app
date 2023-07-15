@@ -10,11 +10,7 @@ export default [
     {
         input,
         plugins: [
-            typescript({
-                compilerOptions: {
-                    declaration: false
-                }
-            }),
+            typescript(),
             nodeResolve({ browser: true }),
             babel({
                 exclude: 'node_modules/**',
@@ -38,6 +34,7 @@ export default [
         plugins: [
             typescript({
                 compilerOptions: {
+                    declaration: false,
                     outDir: 'dist/cjs',
                     declarationDir: 'dist/cjs'
                 }
@@ -58,6 +55,7 @@ export default [
         plugins: [
             typescript({
                 compilerOptions: {
+                    declaration: false,
                     outDir: 'dist/esm',
                     declarationDir: 'dist/esm'
                 }

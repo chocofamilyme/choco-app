@@ -1,6 +1,6 @@
 {
     "name": "choco-app-test",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "scripts": {
         "dev": "rollup -c -w --bundleConfigAsCjs",
         "build": "rollup -c --bundleConfigAsCjs"
