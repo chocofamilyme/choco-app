@@ -2,14 +2,25 @@ import { connect } from '../utils';
 
 const ERROR_MESSAGE = 'NOT_SUPPORTED';
 
-export const authorize = (clientId: string, type: 'code' | 'trackId'): Promise<string | undefined> => {
+export const authorize = (
+    clientId: string,
+    type: 'code' | 'trackId',
+    redirectUri: string = window.location.href,
+    state = ''
+): Promise<string | undefined> => {
     return connect<string | undefined>((resolve: (id: string | undefined) => string | undefined) => {
         if (type === 'code') {
             if (!window.RahmetApp.authorizeV2) {
                 throw new Error(ERROR_MESSAGE);
             }
 
-            window.RahmetApp.authorizeV2({ client_id: clientId, response_type: 'code' });
+            window.RahmetApp.authorizeV2({
+                client_id: clientId,
+                response_type: 'code',
+                redirect_uri: redirectUri,
+                state
+            });
+
             window.RahmetWebApp.onAuthSuccessV2 = (code: string) => resolve(code);
         } else {
             window.RahmetApp.authorize();

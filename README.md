@@ -16,6 +16,21 @@ Type: `(base64: string, filename?: string, mime?: string) => void`<br>
 
 Поделиться файлом формата Base64.
 
+#### base64
+
+Type: `string`<br>
+Картинка в формате Base64.
+
+#### filename
+
+Type: `string`<br>
+Название файла.
+
+#### mime
+
+Type: `string`<br>
+Тип файла.
+
 ```typescript
 import { shareFile } from 'choco-app';
 
@@ -28,6 +43,21 @@ Type: `(base64: string, filename?: string, mime?: string) => void`<br>
 
 Поделиться картинкой формата Base64.
 
+#### base64
+
+Type: `string`<br>
+Картинка в формате Base64.
+
+#### filename
+
+Type: `string`<br>
+Название файла.
+
+#### mime
+
+Type: `string`<br>
+Тип файла.
+
 ```typescript
 import { shareImage } from 'choco-app';
 
@@ -39,6 +69,11 @@ shareImage('data:image/png;base64', 'name', 'image/png');
 Type: `(text: string) => void`<br>
 
 Поделиться текстом.
+
+#### text
+
+Type: `string`<br>
+Передаваемый текст.
 
 ```typescript
 import { shareText } from 'choco-app';
@@ -78,6 +113,11 @@ Type: `(callback: Function) => void`<br>
 
 Принимает функцию, которую стоит выполнить при выходе приложения из фона.
 
+#### callback
+
+Type: `Function`<br>
+Любая функция.
+
 ```typescript
 import { applicationBecomeActive } from 'choco-app';
 
@@ -113,6 +153,11 @@ isLocationEnabled();
 Type: `(callback: Function) => void`<br>
 
 Принимает функцию, которую стоит выполнить при закрытии клавиатуры.
+
+#### callback
+
+Type: `Function`<br>
+Любая функция.
 
 ```typescript
 import { onKeyboardClosed } from 'choco-app';
@@ -162,10 +207,15 @@ Type: `(deeplink: string) => Promise<'success' | 'closed'>`<br>
 
 Вызов оплаты через deeplink.
 
+#### deeplink
+
+Type: `string`<br>
+Ссылка на оплату в приложении.
+
 ```typescript
 import { pay } from 'choco-app';
 
-pay().then(status => {
+pay('ссылка на оплату').then(status => {
     if (status === 'success') {
         console.log('Оплата прошла успешно')
     } else {
@@ -192,11 +242,31 @@ requestGeoPermissionStatus().then(status => {
 
 ### `authorize`
 
-Type: `(clientId: string, type: 'code' | 'trackId') => Promise<string | undefined>`<br>
+Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?: string) => Promise<string | undefined>`<br>
 
 Авторизация пользователя по clientId.
 Если пользователь не авторизован в нативном приложении, откроется окно авторизации с вводом номера телефона и кода.
 В другом случае, метод сразу вернет ответ.
+
+#### clientId
+
+Type: `string`<br>
+Идентификатор вашего приложения.
+
+#### type
+
+Type: `'code' | 'trackId'`<br>
+Тип авторизации.
+
+#### redirectUri
+
+Type: `string`<br>
+Используется, если авторизация через code. На этот адрес возвращается код авторизации. Необходимо получить доступ, как указано [здесь](https://confluence.chocolife.me/pages/viewpage.action?pageId=16515229).
+
+#### state
+
+Type: `string`<br>
+Случайная строка, которая вернется вместе с кодом авторизации, чтобы приложение смогло убедиться, что ответ пришел не от стороннего сервиса.
 
 > :warning: **Вызов метода по type='code'**: вернет ошибку, если авторизация по code отсутствует в нативном приложении. Необходимо сделать обработку на ошибку.
 

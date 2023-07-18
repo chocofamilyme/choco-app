@@ -1,6 +1,6 @@
 export interface IRahmetApp {
     authorize: () => void;
-    authorizeV2?: (body: { client_id: string; response_type: 'code'; redirect_uri?: string; state?: '' }) => void;
+    authorizeV2?: (body: { client_id: string; response_type: 'code'; redirect_uri: string; state: string }) => void;
     pay: (deeplink: string) => void;
     backToRahmetApp: () => void;
     isLocationEnabled?: () => boolean;
