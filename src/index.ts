@@ -18,3 +18,4 @@ if (!window.RahmetWebApp) {
 }
 
 export * from './methods';
+export * from './ts/enum';
