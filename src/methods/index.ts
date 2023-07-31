@@ -11,3 +11,6 @@ export { isLocationEnabled } from './is-location-enabled';
 export { openQR } from './open-qr';
 export { pay } from './pay';
 export { requestGeoPermissionStatus } from './request-geo';
+export { openBarcodeScanner } from './open-barcode-scanner';
+export { isCameraPermissionEnabled } from './is-camera-permission-enabled';
+export { logAmplitudeEvent } from './log-amplitude-event';
