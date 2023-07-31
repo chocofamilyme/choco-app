@@ -251,21 +251,25 @@ Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?
 #### clientId
 
 Type: `string`
+
 Идентификатор вашего приложения.
 
 #### type
 
 Type: `'code' | 'trackId'`
+
 Тип авторизации.
 
 #### redirectUri
 
 Type: `string`
+
 Используется, если авторизация через code. На этот адрес возвращается код авторизации. Необходимо получить доступы у дежурного.
 
 #### state
 
 Type: `string`
+
 Случайная строка, которая вернется вместе с кодом авторизации, чтобы приложение смогло убедиться, что ответ пришел не от стороннего сервиса.
 
 > :warning: **Вызов метода по type='code'**: вернет ошибку, если авторизация по code отсутствует в нативном приложении. Необходимо сделать обработку на ошибку.
@@ -297,16 +301,19 @@ authorize('11111111', 'code')
 #### `openBarcodeScanner`
 
 Type: `(formats: BarcodeFormat[], instructions: string[]) => Promise<string | 'manual'>`
+
 Открывает сканер штрихкодов. Возвращает строку с результатом сканирования или 'manual', если пользователь открыл ручной ввод.
 
 #### formats
 
 Type: `BarcodeFormat[]`
+
 Массив форматов штрихкодов, которые нужно сканировать. По-умолчанию ['EAN_13', 'EAN_8', 'CODE_128'].
 
 #### instructions
 
 Type: `string[]`
+
 Массив инструкций, которые будут показаны пользователю. По-умолчанию пустой массив.
 
 ```typescript
@@ -325,6 +332,7 @@ openBarcodeScanner([BarcodeFormat.EAN_13, BarcodeFormat.EAN_8], ['Холодил
 #### `isCameraPermissionEnabled`
 
 Type: `() => Promise<boolean>`
+
 Проверяет, есть ли разрешение на использование камеры.
 
 ```typescript
@@ -341,8 +349,19 @@ isCameraPermissionEnabled().then(isEnabled => {
 
 #### `logAmplitudeEvent`
 
-Type: `(event: string, body: unknown) => void`
+Type: `(event: string, body: unknown) => boolean`
+
 Логирует событие в Amplitude.
+
+#### event
+
+Type: `string`
+
+Название ивента аналитики.
+
+#### body
+
+Свойства ивента.
 
 ```typescript
 import { logAmplitudeEvent } from 'choco-app';
