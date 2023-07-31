@@ -1,5 +1,5 @@
-export const logAmplitudeEvent = (event: unknown, body: unknown) => {
-    if (!window.RahmetApp?.logAmplitudeEvent) {
+export const logAmplitudeEvent = (event: string, body: unknown) => {
+    if (!window.RahmetApp.logAmplitudeEvent) {
         return false;
     }
 

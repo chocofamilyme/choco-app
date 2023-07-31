@@ -12,7 +12,7 @@ export interface IRahmetWebApp {
     didScanQrText: (text: string) => string | void;
     didGetReferralCode: (code: string) => unknown;
     onKeyboardClosed: Function;
-    onCameraPermissionStatusDefined: (status: boolean) => boolean;
-    onBarcodeScannerSuccess: (barcode: string) => string;
+    onCameraPermissionStatusDefined: (status: boolean) => unknown;
+    onBarcodeScannerSuccess: (barcode: string) => unknown;
     onTapBarcodeEnter: () => void;
 }
