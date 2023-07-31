@@ -13,4 +13,7 @@ export interface IRahmetApp {
     shareText?: (text: string) => void;
     clearCache?: () => void;
     reloadPage?: () => void;
+    logAmplitudeEvent?: (body: string) => void;
+    openBarcodeScanner?: (body: string) => void;
+    isCameraPermissionEnabled?: () => void;
 }
