@@ -12,23 +12,23 @@ npm install choco-app
 
 ### `shareFile`
 
-Type: `(base64: string, filename?: string, mime?: string) => void`<br>
+Type: `(base64: string, filename?: string, mime?: string) => void`
 
 Поделиться файлом формата Base64.
 
 #### base64
 
-Type: `string`<br>
+Type: `string`
 Картинка в формате Base64.
 
 #### filename
 
-Type: `string`<br>
+Type: `string`
 Название файла.
 
 #### mime
 
-Type: `string`<br>
+Type: `string`
 Тип файла.
 
 ```typescript
@@ -39,23 +39,23 @@ shareFile('data:image/png;base64', 'name', 'image/png');
 
 ### `shareImage`
 
-Type: `(base64: string, filename?: string, mime?: string) => void`<br>
+Type: `(base64: string, filename?: string, mime?: string) => void`
 
 Поделиться картинкой формата Base64.
 
 #### base64
 
-Type: `string`<br>
+Type: `string`
 Картинка в формате Base64.
 
 #### filename
 
-Type: `string`<br>
+Type: `string`
 Название файла.
 
 #### mime
 
-Type: `string`<br>
+Type: `string`
 Тип файла.
 
 ```typescript
@@ -66,13 +66,13 @@ shareImage('data:image/png;base64', 'name', 'image/png');
 
 ### `shareText`
 
-Type: `(text: string) => void`<br>
+Type: `(text: string) => void`
 
 Поделиться текстом.
 
 #### text
 
-Type: `string`<br>
+Type: `string`
 Передаваемый текст.
 
 ```typescript
@@ -85,7 +85,7 @@ shareText('Hello World!');
 
 ### `clearCache`
 
-Type: `() => void`<br>
+Type: `() => void`
 
 Очищает кэш приложения.
 
@@ -97,7 +97,7 @@ clearCache();
 
 ### `backToApplication`
 
-Type: `() => void`<br>
+Type: `() => void`
 
 Выход из веб-приложения обратно в нативное.
 
@@ -109,13 +109,13 @@ backToApplication();
 
 ### `applicationBecomeActive`
 
-Type: `(callback: Function) => void`<br>
+Type: `(callback: Function) => void`
 
 Принимает функцию, которую стоит выполнить при выходе приложения из фона.
 
 #### callback
 
-Type: `Function`<br>
+Type: `Function`
 Любая функция.
 
 ```typescript
@@ -126,7 +126,7 @@ applicationBecomeActive(() => console.log('Вышел из фона'));
 
 ### `hapticSelection`
 
-Type: `() => void`<br>
+Type: `() => void`
 
 Вызывает нативную вибрацию.
 
@@ -138,7 +138,7 @@ hapticSelection();
 
 ### `isLocationEnabled`
 
-Type: `() => boolean`<br>
+Type: `() => boolean`
 
 Доступна ли геопозиция при использовании приложения.
 
@@ -150,13 +150,13 @@ isLocationEnabled();
 
 ### `onKeyboardClosed`
 
-Type: `(callback: Function) => void`<br>
+Type: `(callback: Function) => void`
 
 Принимает функцию, которую стоит выполнить при закрытии клавиатуры.
 
 #### callback
 
-Type: `Function`<br>
+Type: `Function`
 Любая функция.
 
 ```typescript
@@ -167,7 +167,7 @@ onKeyboardClosed(() => console.log('Вышел из фона'));
 
 ### `reload`
 
-Type: `() => void`<br>
+Type: `() => void`
 
 Обновление страницы с передачей в query следующих параметров: track_id, code, device_id, session_id и т.д.
 
@@ -179,7 +179,7 @@ reload();
 
 ### `getRefferalCode`
 
-Type: `() => Promise<IRefferalCode>`<br>
+Type: `() => Promise<IRefferalCode>`
 
 Получение реферального кода.
 
@@ -191,7 +191,7 @@ getRefferalCode().then(code => console.log(`Реферальный код: ${cod
 
 ### `openQR`
 
-Type: `() => Promise<string>`<br>
+Type: `() => Promise<string>`
 
 Нативное считывание QR-кода.
 
@@ -203,13 +203,13 @@ openQR().then(text => console.log(`QR-код: ${text}`));
 
 ### `pay`
 
-Type: `(deeplink: string) => Promise<'success' | 'closed'>`<br>
+Type: `(deeplink: string) => Promise<'success' | 'closed'>`
 
 Вызов оплаты через deeplink.
 
 #### deeplink
 
-Type: `string`<br>
+Type: `string`
 Ссылка на оплату в приложении.
 
 ```typescript
@@ -226,7 +226,7 @@ pay('ссылка на оплату').then(status => {
 
 ### `requestGeoPermissionStatus`
 
-Type: `() => Promise<GeoStatus>`<br>
+Type: `() => Promise<GeoStatus>`
 
 Получение статуса геопозиции.
 
@@ -242,7 +242,7 @@ requestGeoPermissionStatus().then(status => {
 
 ### `authorize`
 
-Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?: string) => Promise<string | undefined>`<br>
+Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?: string) => Promise<string | undefined>`
 
 Авторизация пользователя по clientId.
 Если пользователь не авторизован в нативном приложении, откроется окно авторизации с вводом номера телефона и кода.
@@ -250,22 +250,22 @@ Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?
 
 #### clientId
 
-Type: `string`<br>
+Type: `string`
 Идентификатор вашего приложения.
 
 #### type
 
-Type: `'code' | 'trackId'`<br>
+Type: `'code' | 'trackId'`
 Тип авторизации.
 
 #### redirectUri
 
-Type: `string`<br>
+Type: `string`
 Используется, если авторизация через code. На этот адрес возвращается код авторизации. Необходимо получить доступы у дежурного.
 
 #### state
 
-Type: `string`<br>
+Type: `string`
 Случайная строка, которая вернется вместе с кодом авторизации, чтобы приложение смогло убедиться, что ответ пришел не от стороннего сервиса.
 
 > :warning: **Вызов метода по type='code'**: вернет ошибку, если авторизация по code отсутствует в нативном приложении. Необходимо сделать обработку на ошибку.
@@ -292,4 +292,60 @@ authorize('11111111', 'code')
             // Показать ошибку или вызвать authorize с типом trackId
         }
     })
+```
+
+#### `openBarcodeScanner`
+
+Type: `(formats: BarcodeFormat[], instructions: string[]) => Promise<string | 'manual'>`
+Открывает сканер штрихкодов. Возвращает строку с результатом сканирования или 'manual', если пользователь открыл ручной ввод.
+
+#### formats
+
+Type: `BarcodeFormat[]`
+Массив форматов штрихкодов, которые нужно сканировать. По-умолчанию ['EAN_13', 'EAN_8', 'CODE_128'].
+
+#### instructions
+
+Type: `string[]`
+Массив инструкций, которые будут показаны пользователю. По-умолчанию пустой массив.
+
+```typescript
+import { openBarcodeScanner } from 'choco-app';
+import { BarcodeFormat } from 'choco-app/dist/ts/enum';
+
+openBarcodeScanner([BarcodeFormat.EAN_13, BarcodeFormat.EAN_8], ['Холодильник открыт', 'Возьмите товар', 'Наведите камеру на штрихкод']).then(result => {
+    if (result === 'manual') {
+        // Показать ручной ввод
+    } else {
+        // Успешное сканирование, штрихкод в result
+    }
+}));
+```
+
+#### `isCameraPermissionEnabled`
+
+Type: `() => Promise<boolean>`
+Проверяет, есть ли разрешение на использование камеры.
+
+```typescript
+import { isCameraPermissionEnabled } from 'choco-app';
+
+isCameraPermissionEnabled().then(isEnabled => {
+    if (isEnabled) {
+        // Разрешение есть
+    } else {
+        // Разрешения нет
+    }
+}));
+```
+
+#### `logAmplitudeEvent`
+
+Type: `(event: string, body: unknown) => void`
+Логирует событие в Amplitude.
+
+```typescript
+import { logAmplitudeEvent } from 'choco-app';
+
+logAmplitudeEvent('event', { data: 'data' });
 ```
