@@ -14,12 +14,14 @@ export const authorize = (
                 throw new Error(ERROR_MESSAGE);
             }
 
-            window.RahmetApp.authorizeV2({
-                client_id: clientId,
-                response_type: 'code',
-                redirect_uri: redirectUri,
-                state
-            });
+            window.RahmetApp.authorizeV2(
+                JSON.stringify({
+                    client_id: clientId,
+                    response_type: 'code',
+                    redirect_uri: redirectUri,
+                    state
+                })
+            );
 
             window.RahmetWebApp.onAuthSuccessV2 = (code: string) => resolve(code);
         } else {
