@@ -1,4 +1,4 @@
-import { GeoStatus } from '../enum/';
+import { GeoStatus, NotificationStatus } from '../enum';
 
 export interface IRahmetWebApp {
     onAuthSuccess: (trackId: string) => unknown;
@@ -15,4 +15,5 @@ export interface IRahmetWebApp {
     onCameraPermissionStatusDefined: (status: boolean) => unknown;
     onBarcodeScannerSuccess: (barcode: string) => unknown;
     onTapBarcodeEnter: () => void;
+    didGetIsNotificationStatus: (status: NotificationStatus) => NotificationStatus;
 }

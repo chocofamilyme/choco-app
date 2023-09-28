@@ -1,3 +1,5 @@
+import { NotificationStatus } from './ts/enum';
+
 if (!window.RahmetWebApp) {
     window.RahmetWebApp = {
         onAuthSuccess: () => {},
@@ -13,7 +15,8 @@ if (!window.RahmetWebApp) {
         onKeyboardClosed: () => {},
         onCameraPermissionStatusDefined: () => {},
         onBarcodeScannerSuccess: () => {},
-        onTapBarcodeEnter: () => {}
+        onTapBarcodeEnter: () => {},
+        didGetIsNotificationStatus: () => NotificationStatus.notDetermined
     };
 }
 

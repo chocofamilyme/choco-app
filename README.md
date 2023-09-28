@@ -368,3 +368,40 @@ import { logAmplitudeEvent } from 'choco-app';
 
 logAmplitudeEvent('event', { data: 'data' });
 ```
+
+### `getNotificationStatus`
+
+Type: `() => Promise<NotificationStatus>`<br>
+
+Получение статуса о разрешенности уведомлений.
+
+Статусы бывают granted | notDetermined | denied
+
+```typescript
+import { getNotificationStatus } from 'choco-app';
+
+getNotificationStatus().then(status => {
+    if (status === 'granted') {
+        // Когда уведомлений разрешены
+    }
+}));
+```
+
+### `requestNotificationStatus`
+
+Type: `() => Promise<NotificationStatus>`<br>
+
+Запрос на статусы о разрешенности уведомлений.
+Когда у юзера не определен или заблочен, этот метод отправляет юзера в настройки приложения Choco в телефоне
+
+Статусы бывают granted | notDetermined | denied
+
+```typescript
+import { requestNotificationStatus } from 'choco-app';
+
+requestNotificationStatus().then(status => {
+    if (status === 'granted') {
+        // Когда уведомлений разрешены
+    }
+}));
+```

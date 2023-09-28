@@ -16,4 +16,6 @@ export interface IRahmetApp {
     logAmplitudeEvent?: (body: string) => void;
     openBarcodeScanner?: (body: string) => void;
     isCameraPermissionEnabled?: () => void;
+    getNotificationStatus?: () => void;
+    requestNotificationStatus?: () => void;
 }
