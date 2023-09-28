@@ -1,5 +1,5 @@
 import { connect } from '../utils';
-import { NotificationStatus } from '../ts/enum/notification-status.enum';
+import { NotificationStatus } from '../ts/enum';
 
 export const getNotificationStatus = (): Promise<NotificationStatus> => {
     return connect((resolve: (status: NotificationStatus) => NotificationStatus) => {

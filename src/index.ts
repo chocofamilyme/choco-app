@@ -1,4 +1,4 @@
-import { NotificationStatus } from './ts/enum/notification-status.enum';
+import { NotificationStatus } from './ts/enum';
 
 if (!window.RahmetWebApp) {
     window.RahmetWebApp = {

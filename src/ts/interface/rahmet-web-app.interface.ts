@@ -1,5 +1,4 @@
-import { GeoStatus } from '../enum/';
-import { NotificationStatus } from '../enum/notification-status.enum';
+import { GeoStatus, NotificationStatus } from '../enum';
 
 export interface IRahmetWebApp {
     onAuthSuccess: (trackId: string) => unknown;
