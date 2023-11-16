@@ -7,14 +7,15 @@ import { BarcodeFormat } from '../ts/enum';
  */
 export const openBarcodeScanner = (
     formats: BarcodeFormat[] = [BarcodeFormat.EAN_8, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128],
-    instructions: string[] = []
+    instructions: string[] = [],
+    actionText?: string
 ): Promise<string | 'manual'> => {
     return connect((resolve: (text: string) => string) => {
         if (!window.RahmetApp.openBarcodeScanner) {
             return resolve('manual');
         }
 
-        window.RahmetApp.openBarcodeScanner(JSON.stringify({ formats, instructions }));
+        window.RahmetApp.openBarcodeScanner(JSON.stringify({ formats, instructions, actionText }));
         window.RahmetWebApp.onBarcodeScannerSuccess = barcode => resolve(barcode);
         window.RahmetWebApp.onTapBarcodeEnter = () => resolve('manual');
     });
