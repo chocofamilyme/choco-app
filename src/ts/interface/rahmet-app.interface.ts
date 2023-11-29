@@ -18,4 +18,5 @@ export interface IRahmetApp {
     isCameraPermissionEnabled?: () => void;
     getNotificationStatus?: () => void;
     requestNotificationStatus?: () => void;
+    showNativeNotification?: (body: string) => void;
 }

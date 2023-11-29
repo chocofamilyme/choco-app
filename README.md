@@ -405,3 +405,25 @@ requestNotificationStatus().then(status => {
     }
 }));
 ```
+
+### `toastNotify`
+
+Type: `(body: NotifyBody | string, title?: string, message?: string) => void`<br>
+
+Показывает нативное уведомление в приложении.
+Первым параметром принимает либо объект, либо строку, которая является типом NotifyType, вторым параметром может принять заголовок уведомления, а третьим сообщение.
+
+NotifyType может быть 'success' | 'info' | 'warning' | 'error'.
+Объект NotifyBody состоит из type (по умолчанию - 'success'), title, message.
+
+```typescript
+import { toastNotify } from 'choco-app';
+
+toastNotify({
+    type: 'success',
+    title: 'Title',
+    message: 'Some message'
+});
+
+toastNotify('error', 'Title', 'Some message');
+```
