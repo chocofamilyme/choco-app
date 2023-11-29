@@ -1,6 +1,4 @@
-import { connect } from '../utils';
-
-const ERROR_MESSAGE = 'NOT_SUPPORTED';
+import { ERROR_MESSAGE, connect } from '../utils';
 
 export const authorize = (
     clientId: string,
