@@ -300,7 +300,7 @@ authorize('11111111', 'code')
 
 #### `openBarcodeScanner`
 
-Type: `(formats: BarcodeFormat[], instructions: string[]) => Promise<string | 'manual'>`
+Type: `(formats: BarcodeFormat[], instructions: string[], actionText?: string) => Promise<string | 'manual'>`
 
 Открывает сканер штрихкодов. Возвращает строку с результатом сканирования или 'manual', если пользователь открыл ручной ввод.
 
@@ -316,11 +316,17 @@ Type: `string[]`
 
 Массив инструкций, которые будут показаны пользователю. По-умолчанию пустой массив.
 
+#### actionText
+
+Type: `string`
+
+Текст кнопки внутри сканера. Опциональный параметр.
+
 ```typescript
 import { openBarcodeScanner } from 'choco-app';
 import { BarcodeFormat } from 'choco-app/dist/ts/enum';
 
-openBarcodeScanner([BarcodeFormat.EAN_13, BarcodeFormat.EAN_8], ['Холодильник открыт', 'Возьмите товар', 'Наведите камеру на штрихкод']).then(result => {
+openBarcodeScanner([BarcodeFormat.EAN_13, BarcodeFormat.EAN_8], ['Холодильник открыт', 'Возьмите товар', 'Наведите камеру на штрихкод'], 'Ввести штрихкод вручную').then(result => {
     if (result === 'manual') {
         // Показать ручной ввод
     } else {
