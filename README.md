@@ -403,7 +403,7 @@ requestNotificationStatus().then(status => {
     if (status === 'granted') {
         // Когда уведомлений разрешены
     }
-}));
+});
 ```
 
 ### `toastNotify`
@@ -426,4 +426,26 @@ toastNotify({
 });
 
 toastNotify('error', 'Title', 'Some message');
+```
+
+#### `logAppsflyerEvent`
+
+Type: `(event: string, body: unknown) => boolean`
+
+Логирует событие в appsflyer.
+
+#### event
+
+Type: `string`
+
+Название ивента appsflyer.
+
+#### body
+
+Свойства ивента.
+
+```typescript
+import { logAppsflyerEvent } from 'choco-app';
+
+logAppsflyerEvent('event', { ... });
 ```

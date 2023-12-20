@@ -16,3 +16,4 @@ export { requestGeoPermissionStatus } from './request-geo';
 export { openBarcodeScanner } from './open-barcode-scanner';
 export { isCameraPermissionEnabled } from './is-camera-permission-enabled';
 export { logAmplitudeEvent } from './log-amplitude-event';
+export { logAppsflyerEvent } from './log-appsflyer-event';
