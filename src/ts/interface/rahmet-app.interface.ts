@@ -19,4 +19,5 @@ export interface IRahmetApp {
     getNotificationStatus?: () => void;
     requestNotificationStatus?: () => void;
     showNativeNotification?: (body: string) => void;
+    logAppsflyerEvent?: (body: string) => void;
 }
