@@ -6,7 +6,7 @@ export interface IRahmetApp {
     isLocationEnabled?: () => boolean;
     requestGeoPermissionStatus: () => void;
     openQRScannerWithTextResult: () => void;
-    hapticSelection: () => void;
+    hapticSelection?: () => void;
     getReferralCode: () => void;
     loadBase64File?: (json: string) => void;
     shareImage?: (json: string) => void;
