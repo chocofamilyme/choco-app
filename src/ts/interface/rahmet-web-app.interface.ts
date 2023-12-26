@@ -16,4 +16,5 @@ export interface IRahmetWebApp {
     onBarcodeScannerSuccess: (barcode: string) => unknown;
     onTapBarcodeEnter: () => void;
     didGetIsNotificationStatus: (status: NotificationStatus) => NotificationStatus;
+    onCardAdded: () => unknown;
 }

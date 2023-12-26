@@ -16,7 +16,8 @@ if (!window.RahmetWebApp) {
         onCameraPermissionStatusDefined: () => {},
         onBarcodeScannerSuccess: () => {},
         onTapBarcodeEnter: () => {},
-        didGetIsNotificationStatus: () => NotificationStatus.notDetermined
+        didGetIsNotificationStatus: () => NotificationStatus.notDetermined,
+        onCardAdded: () => {}
     };
 }
 
