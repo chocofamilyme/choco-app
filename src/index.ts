@@ -5,6 +5,7 @@ if (!window.RahmetWebApp) {
         onAuthSuccess: () => {},
         onAuthSuccessV2: () => {},
         onAuthDismissed: () => {},
+        onAuthError: () => {},
         onPaySuccess: () => {},
         onNativePayViewClosed: () => {},
         onGeoPermissionStatusDefined: () => {},

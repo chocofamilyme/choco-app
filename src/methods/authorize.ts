@@ -28,5 +28,12 @@ export const authorize = (
         }
 
         window.RahmetWebApp.onAuthDismissed = () => resolve(undefined);
+        window.RahmetWebApp.onAuthError = (code, message) => {
+            if (message) {
+                throw new Error(message);
+            }
+
+            resolve(undefined);
+        };
     });
 };

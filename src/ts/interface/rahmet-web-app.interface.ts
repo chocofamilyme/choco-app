@@ -4,6 +4,7 @@ export interface IRahmetWebApp {
     onAuthSuccess: (trackId: string) => unknown;
     onAuthSuccessV2: (code: string, state: any) => unknown;
     onAuthDismissed: () => unknown;
+    onAuthError: (code?: number, message?: string) => unknown;
     onPaySuccess: () => unknown;
     onNativePayViewClosed: () => unknown;
     onGeoPermissionStatusDefined: (status: GeoStatus) => GeoStatus | void;
