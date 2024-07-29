@@ -6,6 +6,7 @@ export * from './clear-cache';
 export * from './on-keyboard-closed';
 export * from './notification';
 export * from './notification-toast';
+export * from './open-app-settings'
 export { authorize } from './authorize';
 export { backToApplication } from './back-to-app';
 export { applicationBecomeActive } from './become-active';

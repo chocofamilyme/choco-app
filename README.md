@@ -457,3 +457,15 @@ import { logAppsflyerEvent } from 'choco-app';
 
 logAppsflyerEvent('event', { ... });
 ```
+
+#### `openAppSettings`
+
+Type: `() => void`
+
+Открывает настройки приложения ios/android.
+
+```typescript
+import { openAppSettings } from 'choco-app';
+
+openAppSettings();
+```
