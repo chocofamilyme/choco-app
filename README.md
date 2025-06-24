@@ -242,7 +242,7 @@ requestGeoPermissionStatus().then(status => {
 
 ### `authorize`
 
-Type: `(clientId: string, type: 'code' | 'trackId', redirectUri?: string, state?: string) => Promise<string | undefined>`
+Type: `(clientId: string, type?: 'code' | 'trackId', redirectUri?: string, state?: string) => Promise<string | undefined>`
 
 Авторизация пользователя по clientId.
 Если пользователь не авторизован в нативном приложении, откроется окно авторизации с вводом номера телефона и кода.
@@ -256,7 +256,7 @@ Type: `string`
 
 #### type
 
-Type: `'code' | 'trackId'`
+Type: `'code' | 'trackId'` (необязательный)
 
 Тип авторизации.
 

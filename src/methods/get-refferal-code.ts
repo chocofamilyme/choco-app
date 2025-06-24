@@ -1,7 +1,7 @@
 import { connect } from '../utils';
 
 interface IRefferalCode {
-    code: string;
+    code?: string;
     activations_count: number;
     completed_count: number;
 }

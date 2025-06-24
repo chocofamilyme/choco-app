@@ -2,7 +2,7 @@ import { ERROR_MESSAGE, connect } from '../utils';
 
 export const authorize = (
     clientId: string,
-    type: 'code' | 'trackId',
+    type?: 'code' | 'trackId',
     redirectUri: string = window.location.href,
     state = ''
 ): Promise<string | undefined> => {
@@ -21,10 +21,10 @@ export const authorize = (
                 })
             );
 
-            window.RahmetWebApp.onAuthSuccessV2 = (code: string) => resolve(code);
+            window.RahmetWebApp.onAuthSuccessV2 = (code?: string) => resolve(code);
         } else {
             window.RahmetApp.authorize();
-            window.RahmetWebApp.onAuthSuccess = (trackId: string) => resolve(trackId);
+            window.RahmetWebApp.onAuthSuccess = (trackId?: string) => resolve(trackId);
         }
 
         window.RahmetWebApp.onAuthDismissed = () => resolve(undefined);
