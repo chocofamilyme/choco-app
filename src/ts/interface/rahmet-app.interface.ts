@@ -21,4 +21,5 @@ export interface IRahmetApp {
     showNativeNotification?: (body: string) => void;
     logAppsflyerEvent?: (body: string) => void;
     openAppSettings?: () => void;
+    openLink?: (body: string) => void;
 }

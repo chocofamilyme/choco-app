@@ -469,3 +469,15 @@ import { openAppSettings } from 'choco-app';
 
 openAppSettings();
 ```
+
+#### `openLink`
+
+Type: `(url: string) => void`
+
+Открывает внешнюю ссылку в нативном приложении.
+
+```typescript
+import { openLink } from 'choco-app';
+
+openLink('https://google.com');
+```
